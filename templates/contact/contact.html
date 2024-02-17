@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+      <main>
+<div class="breadcrumb-wrapper">
+    <div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-white">
+                  <h2>Contact</h2>
+                </div>
+        <div class="col-md-6">
+        <ol class="breadcrumb justify-content-md-end bg-transparent">
+        <li class="breadcrumb-item">
+            <a class="fas fa-home" href="https://www.mdc.edu.np/"></a>
+        </li>
+         
+                        
+                          <li class="breadcrumb-item">Contact</li>
+                </ol>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+<section class="contact-outer">
+          <div class="container">
+            <div class="row">
+            <div class="col-lg-7 contact-form-wrapper">
+            <div class="contact-form">
+                <h3 class="sub-heading">Contact Form</h3>
+                
+<div class="wpcf7 no-js" id="wpcf7-f112-p17-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form  method="post" class="wpcf7-form init" aria-label="Contact form">
+{% comment %} <div style="display: none;">
+<input type="hidden" name="_wpcf7" value="112" />
+<input type="hidden" name="_wpcf7_version" value="5.7.7" />
+<input type="hidden" name="_wpcf7_locale" value="en_US" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f112-p17-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="17" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div> {% endcomment %}
+<div class="form-group clearfix"> {% csrf_token %}
+    {%for form in form%}
+	<div>
+		<p><label for="">{{form.label}}<small>*</small></label><br />
+<span class="wpcf7-form-control-wrap" data-name="text-270"></span>{{form}}
+		</p>
+	</div>
+    {%endfor%}
+<div class="form-group">
+	{% comment %} <p><input type="hidden" name="_wpcf7_captcha_challenge_captcha-1" value="1759228999" /><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-1" width="72" height="24" alt="captcha" src="https://www.mdc.edu.np/wp-content/uploads/wpcf7_captcha/1759228999.png" /><span class="wpcf7-form-control-wrap" data-name="captcha-1"><input size="40" class="wpcf7-form-control wpcf7-captchar form-control" autocomplete="off" aria-invalid="false" value="" type="text" name="captcha-1" /></span><br /> {% endcomment %}
+<span>Required fields are mark with ( <small class="text-danger">*</small> )</span><br />
+<input class="wpcf7-form-control has-spinner wpcf7-submit btn btn-primary" type="submit" value="Submit" />
+	</p>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+
+            </div>
+            </div>
+              <div class="col-lg-5">
+                                <div class="contact-info">
+                  <h3 class="sub-heading">Contact Info</h3>
+                  <ul>
+                    <li>
+                      <h4><i class="fas fa-home"></i> Address</h4>
+                      <p>Sunwal-4, Nawalparasi, Nepal</p>
+                    </li>
+                    <li>
+                      <h4><i class="fas fa-phone"></i> Phone</h4>
+                      <p>+977 078-570049, 9857046049</p>
+                    </li>
+                    <li>
+                      <h4><i class="fas fa-fax"></i> Fax</h4>
+                      <p>+977 078-570049</p>
+                    </li>
+                    <li>
+                      <h4><i class="fas fa-envelope"></i> Email</h4>
+                      <a href="mailto:mdcampus60@gmail.com">mdcampus60@gmail.com</a>
+                    </li>
+                  </ul>
+                </div>
+                              </div>
+            </div>
+          </div>
+        </section>
+        <section class="location-map">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="map-wrapper">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7070.745810200878!2d83.624657441091!3d27.612965175204575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994286736d6fe1f%3A0x571fc13972c86777!2sDevkota+Multiple+Campus%2C+E+-+W+Hwy%2C+Sunwal+33000!5e0!3m2!1sen!2snp!4v1556279541673!5m2!1sen!2snp" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+</main>
+{% endblock content%}

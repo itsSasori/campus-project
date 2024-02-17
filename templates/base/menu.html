@@ -1,0 +1,62 @@
+{%block content%}
+<nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fas fa-bars"></span>
+    </button>
+<div id="navbarNavDropdown" class="collapse navbar-collapse"><ul id="menu-main-menu" class="navbar-nav"><li id="menu-item-423" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-371 current_page_item menu-item-423 active  "><a href="{%url 'home'%}" aria-current="page" class="nav-link">Home</a></li>
+<li id="menu-item-158" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-158 "><a href="#" class="nav-link">About</a>
+<ul class="sub-menu">
+<li id="menu-item-160" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-160 "><a href="{%url 'aboutus'%}" class="nav-link">About Institution</a></li>
+<li id="menu-item-395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-395 "><a href="{%url 'msg'%}" class="nav-link">Message from Chairman</a></li>
+<li id="menu-item-398" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-398 "><a href="{%url 'smsg'%}" class="nav-link">Message from Campus Chief</a></li>
+<li id="menu-item-159" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-159 "><a href="{%url 'b-members'%}" class="nav-link">CMC Board Members</a></li>
+<li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577 "><a href="{%url 'a-members'%}" class="nav-link">CMC Advisory Member</a></li>
+<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576 "><a href="{%url 'p-members'%}" class="nav-link">CMC Patrons Member</a></li>
+</ul>
+</li>
+<li id="menu-item-179" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-179 "><a href="#" class="nav-link">Programs</a>
+  <ul class="sub-menu">
+    {%for course in courses%}
+<li id="menu-item-392" class="menu-item menu-item-type-post_type menu-item-object-programs menu-item-392 "><a href="{%url 'course-detail' course.id%}" class="nav-link">{{course.name}} ({{course.totalyear}} Years)</a></li>
+{%endfor%}
+</ul>
+</li>
+<li id="menu-item-427" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-427 "><a href="#" class="nav-link">Departments/Cells</a>
+<ul class="sub-menu">
+<li id="menu-item-428" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-428 "><a href="#" class="nav-link">Departments</a>
+<ul class="sub-menu">
+<li id="menu-item-447" class="menu-item menu-item-type-post_type menu-item-object-departments menu-item-447 "><a href="https://www.mdc.edu.np/departments/members-of-faculty-of-management/" class="nav-link">Members of Faculty of Management</a></li>
+<li id="menu-item-446" class="menu-item menu-item-type-post_type menu-item-object-departments menu-item-446 "><a href="https://www.mdc.edu.np/departments/members-of-faculty-of-education/" class="nav-link">Members of Faculty of Education</a></li>
+</ul>
+</li>
+<li id="menu-item-429" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-429 "><a href="#" class="nav-link">Cells</a>
+<ul class="sub-menu">
+<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-cells menu-item-439 "><a href="https://www.mdc.edu.np/cells/extra-curricular-cell/" class="nav-link">Extra Curricular Cell</a></li>
+<li id="menu-item-442" class="menu-item menu-item-type-post_type menu-item-object-cells menu-item-442 "><a href="https://www.mdc.edu.np/cells/public-information-cell/" class="nav-link">Public Information Cell</a></li>
+<li id="menu-item-440" class="menu-item menu-item-type-post_type menu-item-object-cells menu-item-440 "><a href="https://www.mdc.edu.np/cells/internal-examination-cell/" class="nav-link">Internal Examination Cell</a></li>
+<li id="menu-item-444" class="menu-item menu-item-type-post_type menu-item-object-cells menu-item-444 "><a href="https://www.mdc.edu.np/cells/student-support-guidance-cell/" class="nav-link">Student Support &#038; Guidance Cell</a></li>
+<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-cells menu-item-441 "><a href="https://www.mdc.edu.np/cells/iqac/" class="nav-link">IQAC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2189" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2189 "><a href="#" class="nav-link">RMC</a>
+<ul class="sub-menu">
+<li id="menu-item-443" class="nav-item menu-item menu-item-type-post_type menu-item-object-cells menu-item-443 "><a href="https://www.mdc.edu.np/cells/research-management-cell/" class="nav-link">Research Management Cell</a></li>
+<li id="menu-item-2206" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-rmc-gallery menu-item-2206 "><a href="{%url 'gallary'%}" class="nav-link">RMC-Gallery</a></li>
+<li id="menu-item-2191" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-rmc-downloads menu-item-2191 "><a href="{%url 'g-downloads'%}" class="nav-link">Downloads</a></li>
+</ul>
+</li>
+<li id="menu-item-161" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-161 "><a href="https://www.mdc.edu.np/staff/" class="nav-link">Staff</a>
+<ul class="sub-menu">
+<li id="menu-item-163" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-163 "><a href="https://www.mdc.edu.np/staff/faculty-members/" class="nav-link">Faculty Members</a></li>
+<li id="menu-item-162" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-162 "><a href="https://www.mdc.edu.np/staff/non-teaching-staff/" class="nav-link">Non Teaching Staff</a></li>
+</ul>
+</li>
+<li id="menu-item-174" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-newsevents menu-item-174 "><a href="{%url 'get_news'%}" class="nav-link">News &#038; Events</a></li>
+<li id="menu-item-173" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-notice menu-item-173 "><a href="{%url 'get_notices'%}" class="nav-link">Notice</a></li>
+<li id="menu-item-253" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-downloads menu-item-253 "><a href="https://www.mdc.edu.np/downloads/" class="nav-link">Downloads</a></li>
+<li id="menu-item-2199" class="nav-item menu-item menu-item-type-post_type_archive menu-item-object-gallery menu-item-2199 "><a href="{%url 'main_gallary'%}" class="nav-link">Gallery</a></li>
+<li id="menu-item-167" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-167 "><a href="{%url 'contact'%}" class="nav-link">Contact</a></li>
+</ul></div>          </nav>
+{%endblock content%}

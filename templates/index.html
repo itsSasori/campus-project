@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{%block content%}
+<main>
+        <div class="sutra-slider">
+        {%include 'base/slideshow.html'%}
+        </div>
+            
+            
+        <section class="events-notice">
+         {%include 'base/events.html'%}
+        </section>
+        <section class="message-from section-padding">
+           {%include 'base/message-section.html'%}
+        </section>
+        <section>
+            {%include 'base/course-offered.html'%}
+        </section>
+        <section class="news-front section-padding">
+         {%include 'base/news-front.html'%}
+        </section>
+
+       {%include 'base/useful-link.html'%}
+        </section>
+                {% comment %} <!-- Modal -->
+        <div class="modal fade" id="popNotice" tabindex="-1" role="dialog" aria-labelledby="popNoticeTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="popNoticeTitle">Exam Form Fillup Notice to MBS 2nd Semester</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                                 <figure><img width="1230" height="1748" src="https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice.jpg 1230w, https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice-211x300.jpg 211w, https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice-721x1024.jpg 721w, https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice-768x1091.jpg 768w, https://www.mdc.edu.np/wp-content/uploads/2024/02/MBS-2nd-sem-exam-form-notice-1081x1536.jpg 1081w" sizes="(max-width: 1230px) 100vw, 1230px" /></figure>
+                                              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> {% endcomment %}
+          </main>
+          {%endblock content%}

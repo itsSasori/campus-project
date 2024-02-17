@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{%block content%}
+      <main>
+<div class="breadcrumb-wrapper">
+    <div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-white">
+                  <h2>Notice</h2>
+                </div>
+        <div class="col-md-6">
+        <ol class="breadcrumb justify-content-md-end bg-transparent">
+        <li class="breadcrumb-item">
+            <a class="fas fa-home" href="https://www.mdc.edu.np/"></a>
+        </li>
+         
+                        
+                          <li class="breadcrumb-item">Notice</li>
+                </ol>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+<section class="notice-list">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+        <div class="head_section">
+            <h2 class="heading">Latest Notice</h2>
+        </div>
+        <div class="notice-outer">
+            {%for notice in notices%}
+                    <div class="notice-wrapper">
+            <h4>{{notice.title}}</h4>
+            <p class="meta-detail"><strong>Published On: </strong>{{notice.created | timesince }}<p/>
+            <p>  <a href="{%url 'notices-detail' notice.id%}" class="read-more">{{notice.images.url}} &raquo;</a></p>
+            </div>
+            {%endfor%}
+            
+                </div>
+              <nav class="pagination" role="navigation">
+          <div class="nav-previous"><a href="#" ><i class="fas fa-arrow-left"></i> Older posts</a></div>
+          <div class="nav-next"></div>
+      </nav>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block sidebar-outer">
+    <div class="sidebar">
+                <h3 class="sub-heading">Latest News!</h3>
+                {%for news in news%}
+                   <div class="clearfix sidebar-wrapper">
+        <a href="#"><img width="100" height="100" src="" class="attachment-sidebarImage size-sidebarImage wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://www.mdc.edu.np/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-09-at-3.52.10-PM-100x100.jpeg 100w, https://www.mdc.edu.np/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-09-at-3.52.10-PM-150x150.jpeg 150w, https://www.mdc.edu.np/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-09-at-3.52.10-PM-500x500.jpeg 500w" sizes="(max-width: 100px) 100vw, 100px" /></a>
+        <div class="sidebar-content">
+            <h5><a href="{%url 'news-detail' news.id%}">{{news.topics}}</a></h5>
+            <p>{{news.content}}</p>
+        </div>
+           
+        </div>
+        {% endfor %}
+               </div>
+        <h3 class="sub-heading">Courses</h3> 
+    <div class="sidebar">
+      {%for course in courses%}
+            <div class="clearfix sidebar-wrapper">
+        <a href="#"><img width="100" height="100" src="{{course.images.url}}" class="attachment-sidebarImage size-sidebarImage wp-post-image" alt="" decoding="async" loading="lazy" sizes="(max-width: 100px) 100vw, 100px" /></a>
+        <div class="sidebar-content">
+            <h5><a href="{%url 'course-detail' course.id%}">{{course.name}} ({{course.totalyear}} Years)</a></h5>
+            <p>{{course.description}}</p>
+        </div>
+    </div>
+    {%endfor%}
+           
+            </div>
+    </div>    </div>
+    </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+              <div class="footer-inner">
+          <h3>About Us</h3>
+          <p>MDC is a non-profit making community college. Since its establishment in 2060 B.S., it has been a leading college in this area. Since there is not even a single constituent college of T.U. in this district, it has been providing...</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-inner">
+          <h3>Quick Links</h3>
+          <ul id="menu-footer-menu" class="custom-list"><li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210 "><a href="https://www.mdc.edu.np/about/about-institution/" class="nav-link">About</a></li>
+<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211 "><a href="https://www.mdc.edu.np/contact/" class="nav-link">Contact</a></li>
+<li id="menu-item-207" class="menu-item menu-item-type-post_type menu-item-object-programs menu-item-207 "><a href="https://www.mdc.edu.np/programs/scholarship/" class="nav-link">Scholarship Scheme</a></li>
+<li id="menu-item-213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-213 "><a href="https://www.mdc.edu.np/staff/faculty-members/" class="nav-link">Faculty Members</a>
+<ul class="sub-menu">
+	<li id="menu-item-496" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-496 "><a href="http://sms.sutrait.com.np/" class="nav-link">SMS Login</a></li>
+</ul>
+</li>
+</ul>        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-inner">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-home"></i> Sunwal-4, Nawalparasi, Nepal</li>
+            <li><i class="fas fa-phone"></i> +977 078-570049, 9857046049</li>
+            <li><i class="fas fa-fax"></i> +977 078-570049</li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:mdcampus60@gmail.com">mdcampus60@gmail.com</a></li>
+          </ul>
+          <ul class="social">
+            <li> <a href="https://www.facebook.com/mdcampus60" title="facebook" target="_blank" class="fab fa-facebook-f"></a></li>
+            <li> <a href="#" title="twitter" target="_blank" class="fab fa-twitter"></a></li>
+            <li> <a href="#" title="Youtube" target="_blank" class="fab fa-youtube"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="container">
+      <p>&copy; 2024 Mahakavi Devkota Campus. All rights reserved | Design & Developed By: <a target="_blank" href="http://sutrait.com.np">Sutra IT Consult Pvt. Ltd.</a> </p>
+    </div>
+  </div>
+</footer>
+</div>
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script type='text/javascript' src='https://www.mdc.edu.np/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.7' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.mdc.edu.np\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.7' id='contact-form-7-js'></script>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' id='jquery-js'></script>
+<script type='text/javascript' src='//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js' id='bootstrap_js-js'></script>
+<script type='text/javascript' src='//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js' id='marquee_js-js'></script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/themes/mdc/js/owl.carousel.js' id='owl_carousel_js-js'></script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/themes/mdc/js/lightbox.min.js' id='lightbox_js-js'></script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/themes/mdc/js/simplyscroll.min.js' id='simplyScroll_js-js'></script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/themes/mdc/js/calendar.js' id='wpcalendar_js-js'></script>
+<script type='text/javascript' src='https://www.mdc.edu.np/wp-content/themes/mdc/js/sutrait.js' id='main_js-js'></script>
+</body>
+</html>
+
+
+{%endblock content%}

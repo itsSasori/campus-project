@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{%block content%}
+      <main>
+<div class="breadcrumb-wrapper">
+    <div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-white">
+                  <h2>RMC-Galleries</h2>
+                </div>
+        <div class="col-md-6">
+        <ol class="breadcrumb justify-content-md-end bg-transparent">
+        <li class="breadcrumb-item">
+            <a class="fas fa-home" href="#"></a>
+        </li>
+         
+                        
+                          <li class="breadcrumb-item">RMC-Galleries</li>
+                </ol>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+<section class="gallery">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="row">
+                    {%for gallary in gallary%}
+            <div class="col-lg-4">
+                <figure>
+                    <a href="{%url 'main_gallary-detail' gallary.id%}">
+                        <img src="{{gallary.thumbnail.url}}" alt="">
+                    </a>
+                </figure>
+                <h6>{{gallary.name}}</h6>
+            </div>
+                    {%endfor%}
+           
+                </div>
+        </div>
+    </div>
+    </div>
+    </section> 
+    </main>
+    {%endblock content%}

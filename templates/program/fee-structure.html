@@ -1,0 +1,54 @@
+{%block content%}<h3>Fees English Medium:</h3>
+
+<table id="tablepress-bbseng" class="tablepress tablepress-id-bbseng">
+<thead>
+
+<tr class="row-1 odd">
+	<th class="column-1">Particulars</th><th class="column-2">Year I</th><th class="column-3">Year II</th><th class="column-4">Year III</th><th class="column-5">Year IV</th>
+</tr>
+</thead>
+{%for bbayear1 in bbayear1%}
+{%for field_names in field_names%}
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1">{{field_names}}</td><td class="column-2">{{bbayear1.Admission_Fee}}</td>{%for bbayear2 in bbayear2%}
+  <td class="column-3">{{bbayear2.Admission_Fee}}</td>{%endfor%}{%for bbayear3 in bbayear3%}
+  <td class="column-3">{{bbayear3.Admission_Fee}}</td>{%endfor%}{%for bbayear4 in bbayear4%}
+  <td class="column-5">{{bbayear4.Admission_Fee}}</td>{%endfor%}
+</tr>
+{%endfor%}
+{%endfor%}
+
+{%for bbayear1 in bbayear1%}
+<tr class="row-10 even">
+	<td class="column-1">Total Yearly Fee</td><td class="column-2">{{bbayear1.get_total|floatformat:2}}</td>{%for bbayear2 in bbayear2%}
+  <td class="column-3">{{bbayear2.get_total|floatformat:2}}</td>{%endfor%}{%for bbayear3 in bbayear3%}
+  <td class="column-4">{{bbayear3.get_total|floatformat:2}}</td>{%endfor%}{%for bbayear4 in bbayear4%}
+  <td class="column-5">{{bbayear4.get_total|floatformat:2}}</td>{%endfor%}
+</tr>
+{%endfor%}
+
+{%for bbsyear1 in bbsyear1%}
+{%for field_names in field_names%}
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1">{{field_names}}</td><td class="column-2">{{bbsyear1.Admission_Fee}}</td>{%for bbsyear2 in bbayear2%}
+  <td class="column-3">{{bbsyear2.Admission_Fee}}</td>{%endfor%}{%for bbsyear3 in bbayear3%}
+  <td class="column-3">{{bbsyear3.Admission_Fee}}</td>{%endfor%}{%for bbsyear4 in bbayear4%}
+  <td class="column-5">{{bbsyear4.Admission_Fee}}</td>{%endfor%}
+</tr>
+{%endfor%}
+{%endfor%}
+
+{%for bbsyear1 in bbsyear1%}
+<tr class="row-10 even">
+	<td class="column-1">Total Yearly Fee</td><td class="column-2">{{bbsyear1.get_total|floatformat:2}}</td>{%for bbayear2 in bbayear2%}
+  <td class="column-3">{{bbsyear2.get_total|floatformat:2}}</td>{%endfor%}{%for bbsyear3 in bbayear3%}
+  <td class="column-4">{{bbsyear3.get_total|floatformat:2}}</td>{%endfor%}{%for bbsyear4 in bbayear4%}
+  <td class="column-5">{{bbsyear4.get_total|floatformat:2}}</td>{%endfor%}
+</tr>
+{%endfor%}
+
+</tbody>
+</table>
+{%endblock content%}
